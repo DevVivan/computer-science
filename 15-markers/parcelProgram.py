@@ -45,7 +45,9 @@ def calculateParcel(w, h, l, b):
             accepted = False
 
 def output():
-    global totalParcels, acceptedParcels, rejectedParcels, count, acceptedWeight
+    global totalParcels, acceptedParcels, rejectedParcels, count, acceptedWeight, price, sumPrise
+    price = 0
+    sumPrice = 0
     count = 0
     totalParcels = 0
     acceptedParcels = 0
@@ -68,14 +70,22 @@ def output():
             print("-" * 100)
             rejectedParcels += 1
         else:
-            print("-" * 100)
-            print("The parcel has been accepted.")
-            print("-" * 100)
             acceptedWeight = acceptedWeight + weight
             acceptedParcels += 1
+            totalParcels = acceptedParcels + rejectedParcels
+            if weight >= 1 and weight <= 5:
+                price = 10
+                sumPrice = sumPrice + 10
+            if weight > 5 and weight <= 10:
+                price = 10 + (weight - 5) * 10 * 0.1
+                sumPrice = sumPrice + (10 + (weight - 5) * 10 * 0.1)
+            print("-" * 100)
+            print("The parcel has been accepted.")
+            print("The price of the parcel is $" + str(price) + ".")
+            print("-" * 100)
         count = count + 1
-    totalParcels = acceptedParcels + rejectedParcels
     print("There are " + str(totalParcels) + " total parcels in your consignment.")
     print(str(acceptedParcels) + " parcels were accepted. The total weight of these accepted parcels is " + str(acceptedWeight) + " kg." )
     print(str(rejectedParcels) + " parcels were rejected.")
+    print("The total price of the parcels was $" + str(sumPrice) + ".")
 output()
