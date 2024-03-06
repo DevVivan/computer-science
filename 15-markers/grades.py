@@ -11,7 +11,7 @@ def outputName():
     print(StudentName[index])
 
 def handleProgram():
-    global index
+    global index, totalDistinctions, totalMerits, totalPasses, totalFails
     index2 = 0
     while index < ClassSize:
         print("-" * 50)
@@ -23,6 +23,18 @@ def handleProgram():
             index2 = index2 + 1
         print("The total mark for this student is " + str(totalMarks))
         print("The average mark for this student is " + str(round(totalMarks/SubjectNo)))
+        if (totalMarks/SubjectNo) >= 70:
+            print("This student got a distinction.")
+            totalDistinctions = totalDistinctions + 1
+        elif (totalMarks/SubjectNo) >= 55 and (totalMarks/SubjectNo) < 70:
+            print("This student got a merit.")
+            totalMerits = totalMerits + 1
+        elif (totalMarks/SubjectNo) >= 40 and (totalMarks/SubjectNo) < 55:
+            print("This student got a pass.")
+            totalPasses = totalPasses + 1
+        elif (totalMarks/SubjectNo) < 40:
+            print("This student got a fail.")
+            totalFails = totalFails + 1
         index = index + 1   
 
 handleProgram()
