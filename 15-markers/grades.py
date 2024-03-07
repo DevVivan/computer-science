@@ -13,6 +13,10 @@ def outputName():
 def handleProgram():
     global index, totalDistinctions, totalMerits, totalPasses, totalFails
     index2 = 0
+    totalFails = 0
+    totalMerits = 0
+    totalDistinctions = 0
+    totalPasses = 0
     while index < ClassSize:
         print("-" * 50)
         outputName()
@@ -38,4 +42,9 @@ def handleProgram():
         index = index + 1   
 
 handleProgram()
-    
+print("-" * 50)
+print(str(totalDistinctions) + " students got a distinction.")
+print(str(totalMerits) + " students got a merit.")
+print(str(totalPasses) + " students got a pass.")
+print(str(totalFails) + " students got a fail.")
+print("-" * 50)
