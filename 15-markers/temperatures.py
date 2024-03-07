@@ -7,7 +7,7 @@ index = 0
 index2 = 0
 reading = 0.0
 
-def getValues():
+def getValues(): # get the temperatures
     global index, index2, reading
     while index < numDays:
         while index2 < numReadingsPerDay:
@@ -17,5 +17,6 @@ def getValues():
                 print("Incorrectly entered reading. Please try again.")
                 reading = float(input("Enter the temperature reading for hour " + str(index2 + 1) + " on day " + str(index + 1) + ": "))
             index2 = index2 + 1
+        index = index + 1
 
 getValues()
