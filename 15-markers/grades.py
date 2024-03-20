@@ -6,11 +6,11 @@ totalMarks = 0
 markAverage = 0
 index = 0
 
-def outputName():
+def outputName(): # output the name of the student
     global index
     print(StudentName[index])
 
-def handleProgram():
+def handleProgram(): # handle the entire prorgram
     global index, totalDistinctions, totalMerits, totalPasses, totalFails
     index2 = 0
     totalFails = 0
