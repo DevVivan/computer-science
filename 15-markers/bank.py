@@ -51,20 +51,10 @@ def depositMoney(accountID, amount, AccDetails):
    AccDetails[accountID][0] = newBalance
    print("Deposit successful. Your new balance is:", newBalance)
 
-def main(Account, AccDetails):
-   accountID = int(input("Enter your account ID: "))
-   name = input("Enter your name: ")
-   password = input("Enter your password: ")
-
-   if login(accountID, name, password, Account):
-       print("Login successful.")
-       displayMenu(accountID, AccDetails)
-   else:
-       print("Invalid credentials. Please try again.")
 
 def displayMenu(accountID, AccDetails):
    while True:
-       print("\nMenu:")
+       print("Menu:")
        print("1. Display balance")
        print("2. Withdraw money")
        print("3. Deposit money")
