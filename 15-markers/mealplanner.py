@@ -1,4 +1,4 @@
-mealSchedule = [["" for i in range(3)]for y in range(3)]
+mealSchedule = [["" for i in range(3)]for y in range(7)]
 days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 breakfast = ""  
 lunch = ""
@@ -26,6 +26,8 @@ def display():
 
 display()
 
+row = 0
+col = 0
 mealSchedule[4][2] = "BBQ"
 
 display()
